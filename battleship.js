@@ -20,11 +20,11 @@ var letterConversion = {
 	"I": 8,
 	"J": 9
 }
-
+var arrayOne = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
 // makes the grid columns and rows
 for (i = 0; i < cols; i++) {
 	for (j = 0; j < rows; j++) {
-
+//J is rows i is columns
 		// creates a new div HTML element for each grid square and makes it the right size
 		var square = document.createElement("div");
 		gameBoardContainer.appendChild(square);
@@ -33,7 +33,11 @@ for (i = 0; i < cols; i++) {
 		square.id = 's' + j + i;
 		square.className = "boardSquare";
 
-		// THIS IS WHERE YOU WILL ADD CODE FOR PART 1 TO ADD TEXT TO EACH SQUARE
+		//var wow = letterConversion.J;
+		//console.log(wow);
+
+		square.textContent = arrayOne[j] + (i+1);
+		//console.log(arrayOne[])
 
 		// set each grid square's coordinates: multiples of the current row or column number
 		var topPosition = j * squareSize;
@@ -62,5 +66,6 @@ var gameBoard = [
 function fireTorpedo() {
 
 	// Your game logic will go here!
+	console.log("button working");
 
 }
