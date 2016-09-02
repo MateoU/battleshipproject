@@ -3,6 +3,9 @@ var rows = 10;
 var cols = 10;
 var squareSize = 50;
 
+//counts hits
+var missCounter = 16;
+
 // gets the container element
 var gameBoardContainer = document.getElementById("gameboard");
 
@@ -20,7 +23,7 @@ var letterConversion = {
 	"I": 8,
 	"J": 9
 }
-var arrayOne = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+var arrayOne = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
 // makes the grid columns and rows
 for (i = 0; i < cols; i++) {
 	for (j = 0; j < rows; j++) {
@@ -33,11 +36,7 @@ for (i = 0; i < cols; i++) {
 		square.id = 's' + j + i;
 		square.className = "boardSquare";
 
-		//var wow = letterConversion.J;
-		//console.log(wow);
-
 		square.textContent = arrayOne[j] + (i+1);
-		//console.log(arrayOne[])
 
 		// set each grid square's coordinates: multiples of the current row or column number
 		var topPosition = j * squareSize;
@@ -64,8 +63,38 @@ var gameBoard = [
 				]
 
 function fireTorpedo() {
+	var launchMissile = $("#textBox").val();
+	var rowLM = launchMissile.substring(0, 1);
+	var columnLM = launchMissile.substring(1,3);
+	var letterR = letterConversion[rowLM];
+	var letterC = columnLM - 1;
 
-	// Your game logic will go here!
-	console.log("button working");
+	//combines s + the id
+	var together = 's' + letterR + letterC;
 
+
+
+	if(gameBoard[letterR][letterC] == 1){
+		$("#" + together).css("background-color", "red");
+		missCounter += 1;
+		console.log(missCounter);
+	}	else {
+			$("#" + together).css("background-color", "gray");
+	}
+
+	if (missCounter == 17){
+		console.log("destroyed");
+		$("#you_win").fadeIn();
+		$("#you_win").css("display", "block");
+		$("#invisdiv").fadeOut();
+
+	}
+}
+
+function reload() {
+	location.reload();
+}
+
+function close()  {
+	$("#you_win").fadeOut();
 }

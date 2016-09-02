@@ -11,11 +11,18 @@
 		<h1>Battleship</h1>
 		<p id="instructions">Use the text box to enter your coordinate guess. Try to sink every battleship!</p>
 	</div>
-
+	<div id="invisdiv">
 	<input type="text" id="textBox"></input>
 	<button onclick="fireTorpedo()" id="launchButton">Launch Missle</button>
+</div>
 
 	<div id="gameboard">
+	</div>
+
+	<div id="you_win">
+		<h3>You have destroyed all of the battleships!</h3>
+		<button onclick="reload()" id="reloadButton">Play Again?</button>
+		<button onclick="close()" id="closeButton">Close</button>
 	</div>
 
 	<script type="text/javascript" src="battleship.js"></script>

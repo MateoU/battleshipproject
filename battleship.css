@@ -72,3 +72,31 @@ p, button, input {
   transition: all  0.3s ease;
   background-color: #940000;
 }
+
+#you_win {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 33%;
+  border: 1px solid white;
+  background-color: black;
+
+}
+
+#reloadButton, #closeButton {
+  font-family: 'Courier New', sans-serif;
+  background-color: #CE0000; /* Red */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#reloadButton:hover, #closeButton:hover {
+  cursor: pointer;
+  transition: all  0.3s ease;
+  background-color: #940000;
+}
