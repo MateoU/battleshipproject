@@ -12,7 +12,7 @@
 		<p id="instructions">Use the text box to enter your coordinate guess. Try to sink every battleship!</p>
 	</div>
 	<div id="invisdiv">
-	<input type="text" id="textBox"></input>
+	<input type="text" id="textBox"></input><br>
 	<button onclick="fireTorpedo()" id="launchButton">Launch Missle</button>
 </div>
 
@@ -22,7 +22,21 @@
 	<div id="you_win">
 		<h3>You have destroyed all of the battleships!</h3>
 		<button onclick="reload()" id="reloadButton">Play Again?</button>
-		<button onclick="close()" id="closeButton">Close</button>
+	</div>
+
+	<div id="placeYourOwn">
+		<h3>Place your own ships here</h3>
+		<ul>
+			<li>Carrier: 5 Spaces</li>
+			<li>Battleship: 4 Spaces</li>
+			<li>Cruiser: 3 Spaces</li>
+			<li>Submarine: 3 Spaces</li>
+			<li>Destroyer: 2 Spaces</li>
+			<li>Man: 1 Space</li>
+		</ul>
+		<h4>ex: J6 Destroyer Up</h4>
+		<input type="text" id="thingimabob"></input><br>
+		<button class="stylish" onclick="setShip()">Set Ship</button>
 	</div>
 
 	<script type="text/javascript" src="battleship.js"></script>
